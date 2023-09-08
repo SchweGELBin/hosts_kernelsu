@@ -17,7 +17,7 @@ jobs:
             prop_path: 'version'
       - name: Creating module zip
         run:  |
-          sudo zip -r ${{ github.event.repository.name }}.zip *  
+          sudo zip -r $KSU-Hosts.zip *  
       - name: Create and upload release asset
         uses: symbuzzer/fork-github-release@master
         with:
