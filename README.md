@@ -7,7 +7,7 @@
 - Flash via KernelSU Manager
 
 ## Changelog
-- **[Changelog](https://raw.githubusercontent.com/SchweGELBin/hosts_kernelsu/master/CHANGELOG.md)**
+- **[Changelog](https://github.com/SchweGELBin/hosts_kernelsu/blob/master/CHANGELOG.md)**
 
 ## Build
 - Fork this repository
