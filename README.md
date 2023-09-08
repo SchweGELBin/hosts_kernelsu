@@ -1,10 +1,13 @@
-# KernelSU - Systemless Hosts
+# KernelSU - Hosts
 
 **Adds a hosts file to block ads etc.**
 
 ## Install
-- Download **[latest release](https://github.com/SchweGELBin/hosts_kernelsu/releases/latest/)**
+- Download **[latest release](https://github.com/SchweGELBin/hosts_kernelsu/releases/latest/download/KSU-Hosts.zip)**
 - Flash via KernelSU Manager
+
+## Changelog
+- **[Changelog](https://raw.githubusercontent.com/SchweGELBin/hosts_kernelsu/master/CHANGELOG.md)**
 
 ## Build
 - Fork this repository
