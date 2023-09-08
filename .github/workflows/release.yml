@@ -32,4 +32,4 @@ jobs:
           allow_override: true
       - name: Cleanup module zip
         run:  |
-          rm ${{ github.event.repository.name }}.zip
+          rm KSU-Hosts.zip
