@@ -25,7 +25,7 @@ jobs:
           tag: ${{steps.version.outputs.prop}}
           name: ${{steps.version.outputs.prop}}
           body: Please check [changelog](https://github.com/${{ github.repository }}/blob/${{ github.ref_name }}/CHANGELOG.md) for changes
-          files: ${{ github.event.repository.name }}.zip
+          files: $KSU-Hosts.zip
           gzip: false
           draft: false
           prerelease: false
