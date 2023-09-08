@@ -5,21 +5,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: symbuzzer/fork-checkout-repo@main
+        uses: actions/checkout@main
         with:
           persist-credentials: false
           fetch-depth: 0
-      - name: Get module version
+      - name: Get version
         id: version
-        uses: symbuzzer/fork-github-action-json-property@master
+        uses: notiz-dev/github-action-json-property@master
         with: 
             path: 'update.json'
             prop_path: 'version'
-      - name: Creating module zip
+      - name: Archive
         run:  |
           sudo zip -r KSU-Hosts.zip *  
-      - name: Create and upload release asset
-        uses: symbuzzer/fork-github-release@master
+      - name: Release
+        uses: meeDamian/github-release@master
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{steps.version.outputs.prop}}
@@ -30,6 +30,6 @@ jobs:
           draft: false
           prerelease: false
           allow_override: true
-      - name: Cleanup module zip
+      - name: Cleanup
         run:  |
           rm KSU-Hosts.zip
