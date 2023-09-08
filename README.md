@@ -1,4 +1,4 @@
-# KernelSU - Systemless Hosts
+# KernelSU - Hosts
 
 **Adds a hosts file to block ads etc.**
 
