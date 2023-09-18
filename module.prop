@@ -1,7 +1,7 @@
 id=ksu-hosts
 name=KSU-Hosts
-version=v2
-versionCode=2
+version=v3
+versionCode=3
 author=SchweGELBin
 description=Adds a hosts file to block ads etc.
 updateJson=https://raw.githubusercontent.com/SchweGELBin/hosts_kernelsu/master/update.json
