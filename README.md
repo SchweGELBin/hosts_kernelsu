@@ -16,4 +16,4 @@
 ## Thanks / Credits
 **[symbuzzer](https://github.com/symbuzzer)** for the **[base](https://github.com/symbuzzer/systemless-hosts-KernelSU-module)**
 
-**[tiann](https://github.com/tiann)** for KernelSU
+**[tiann](https://github.com/tiann)** for **[KernelSU](https://github.com/tiann/kernelsu)**
