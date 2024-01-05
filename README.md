@@ -1,6 +1,6 @@
 # KernelSU - Hosts
 
-**Adds a hosts file to block ads etc.**
+**Adds a hosts file to block advertisements, trackers, etc.**
 
 ## Install
 - Download **[latest release](https://github.com/SchweGELBin/hosts_kernelsu/releases/latest/download/KSU-Hosts.zip)**
