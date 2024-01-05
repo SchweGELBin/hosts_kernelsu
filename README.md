@@ -14,6 +14,6 @@
 - Run Action "CI Build"
 
 ## Thanks / Credits
-**[symbuzzer](https://github.com/symbuzzer)** for the base
+**[symbuzzer](https://github.com/symbuzzer)** for the **[base](https://github.com/symbuzzer/systemless-hosts-KernelSU-module)**
 
 **[tiann](https://github.com/tiann)** for KernelSU
