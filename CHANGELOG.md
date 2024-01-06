@@ -1,5 +1,8 @@
+## v4
+- Added the system binary file "uphosts"
+- Adds the option to manage your hosts file via the terminal (uphosts)
+
 ## v3
-- Bump version code
 - Clean up
 
 ## v2
