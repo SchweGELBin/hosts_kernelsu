@@ -6,14 +6,26 @@
 - Download **[latest release](https://github.com/SchweGELBin/hosts_kernelsu/releases/latest/download/KSU-Hosts.zip)**
 - Flash via KernelSU Manager
 
-## Changelog
-- **[Changelog](https://github.com/SchweGELBin/hosts_kernelsu/blob/master/CHANGELOG.md)**
+## Apply
+There are 2 options, how you can manage your hosts file:
+### Uphosts
+- Install a Terminal app like **[termux](https://github.com/termux/termux-app/releases/latest)**
+- Run the command "uphosts"
+- Choose your options to manage your hosts file
+### App
+- Install an App like **[AdAway](https://github.com/AdAway/AdAway/releases/latest)**
+- Give that App root access via the KernelSU Manager
+- Manage your hosts file with that app
+
+## [Changelog](https://github.com/SchweGELBin/hosts_kernelsu/blob/master/CHANGELOG.md)
 
 ## Build
 - Fork this repository
 - Run Action "CI Build"
 
 ## Thanks / Credits
-**[symbuzzer](https://github.com/symbuzzer)** for the **[base](https://github.com/symbuzzer/systemless-hosts-KernelSU-module)**
-
-**[tiann](https://github.com/tiann)** for **[KernelSU](https://github.com/tiann/kernelsu)**
+- **[AdAway](https://github.com/AdAway)** for **[AdAway](https://github.com/AdAway/AdAway)**
+- **[symbuzzer](https://github.com/symbuzzer)** for the **[base](https://github.com/symbuzzer/systemless-hosts-KernelSU-module)**
+- **[StevenBlack](https://github.com/StevenBlack)** for his **[hosts](https://github.com/StevenBlack/hosts)**
+- **[termux](https://github.com/termux)** for its **[termux-app](https://github.com/termux/termux-app)**
+- **[tiann](https://github.com/tiann)** for **[KernelSU](https://github.com/tiann/kernelsu)** and its Manager
