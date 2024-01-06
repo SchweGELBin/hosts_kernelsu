@@ -24,7 +24,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{steps.version.outputs.prop}}
           name: ${{steps.version.outputs.prop}}
-          body: Please check [changelog](https://github.com/${{ github.repository }}/blob/${{ github.ref_name }}/CHANGELOG.md) for changes
+          body: Please check the [changelog](https://github.com/${{ github.repository }}/blob/${{ github.ref_name }}/CHANGELOG.md) and [readme](https://github.com/${{ github.repository }}/blob/${{ github.ref_name }}/readme.md)
           files: KSU-Hosts.zip
           gzip: false
           draft: false
