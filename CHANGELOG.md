@@ -1,3 +1,8 @@
+## v6
+- Improved the "Custom" section in "uphosts"
+- New options: Single Blacklist, Addons
+- Hosts file resets to default instad of nothing, when being emptied
+
 ## v5
 - Added the option to show help in "uphosts"
 - "uphosts" shows the number of entries of the hosts file
