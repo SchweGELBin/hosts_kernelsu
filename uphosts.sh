@@ -60,12 +60,12 @@ echo "Script ran successfully"
 clear
 
 echo "
-##################################################
-         Thank you for using this module!
-          Please check out SchweGELBin's
-             and StevenBlack's Github
---------------------------------------------------
-https://github.com/SchweGELBin/hosts_kernelsu
-https://github.com/StevenBlack/hosts
-##################################################
+####################################################
+|         Thank you for using this module!         |
+|          Please check out SchweGELBin's          |
+|             and StevenBlack's Github             |
+|--------------------------------------------------|
+|  https://github.com/SchweGELBin/hosts_kernelsu   |
+|  https://github.com/StevenBlack/hosts            |
+####################################################
 "
