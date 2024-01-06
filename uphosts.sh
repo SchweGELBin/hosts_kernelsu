@@ -93,13 +93,14 @@ Addon)
 echo "
 Paste your raw addon link below:"
 read link
-echo "
-" >> $MODDIR/system/etc/hosts
+echo "" >> $MODDIR/system/etc/hosts
 curl -fs $link >> $MODDIR/system/etc/hosts
 cancel=true
 ;;
 Single)
-echo "" >> $MODDIR/system/etc/hosts
+echo "
+# Custom hosts below
+" >> $MODDIR/system/etc/hosts
 echo "
 Enter your host below (Nothing - Quit):"
 while true
