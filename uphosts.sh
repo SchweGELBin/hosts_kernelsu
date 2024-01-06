@@ -66,7 +66,7 @@ else
   if [[ $REPLY == 1 ]]; then
     echo "
 ------------------------------------
-Help    - Show this message
+Help   - Show this message
 Single - Add a single host
 
 Addon - Append to hosts file
@@ -109,7 +109,7 @@ do
   if [[ -z $host ]]; then
     break
   fi
-  echo "127.0.0.1       $host" >> $MODDIR/system/etc/hosts
+  echo "0.0.0.0         $host" >> $MODDIR/system/etc/hosts
 done
 cancel=true
 ;;
