@@ -9,10 +9,10 @@ echo "Choose your hosts file:
 "
 
 PS3="Enter a number: "
-select option in Empty Basic Full Custom Cancel
+select option in Empty Basic Spark Full Custom Cancel
 do
 echo "Selected option: $option"
-if [[ $REPLY =~ ^[1-5]$ ]]; then
+if [[ $REPLY =~ ^[1-6]$ ]]; then
    break
 else
    echo "${NUM} is not a valid option..."
@@ -25,6 +25,9 @@ empty=true
 ;;
 Basic)
 link=https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+;;
+Spark)
+link=https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn/hosts
 ;;
 Full)
 link=https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-social/hosts
