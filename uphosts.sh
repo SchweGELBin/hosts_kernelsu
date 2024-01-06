@@ -13,10 +13,10 @@ select option in Help Empty Basic Spark Full Custom Cancel
 do
 echo "Selected option: $option"
 if [[ $REPLY =~ ^[2-7]$ ]]; then
-   break
+  break
 else
   if [[ $REPLY == 1 ]]; then
-     echo "
+    echo "
 ------------------------------------
 Help  - Show this message
 Empty - Clear Hosts / Disable Hosts
@@ -28,12 +28,12 @@ Full  - StevenBlack's Unified hosts
         with all extensions
 
 Custom - User hosts link
-Cancel - caecel this script
+Cancel - cancel this script
 ------------------------------------
 "
-   else
+    else
       echo "${NUM} is not a valid option..."
-   fi
+    fi
 fi
 done
 
