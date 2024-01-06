@@ -11,7 +11,20 @@ There are 2 options, how you can manage your hosts file:
 ### Uphosts
 - Install a Terminal app like **[termux](https://github.com/termux/termux-app/releases/latest)**
 - Run the command "uphosts"
-- Choose your options to manage your hosts file
+- Choose your options to manage your hosts file:
+```
+Help  - Show this message
+Empty - Clear Hosts / Disable Hosts
+
+Basic - StevenBlack's Unified hosts
+Spark - StevenBlack's Unified hosts
+        with all extensions except social
+Full  - StevenBlack's Unified hosts
+        with all extensions
+
+Custom - User hosts link
+Cancel - cancel this script
+```
 ### App
 - Install an App like **[AdAway](https://github.com/AdAway/AdAway/releases/latest)**
 - Give that App root access via the KernelSU Manager
