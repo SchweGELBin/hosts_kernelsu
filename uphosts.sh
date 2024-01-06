@@ -5,7 +5,6 @@ echo "--------------------------
    Hosts by StevenBlack
 --------------------------
 "
-echo $banner
 echo "Choose your hosts file:
 "
 
