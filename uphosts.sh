@@ -5,21 +5,43 @@ echo "--------------------------
    Hosts by StevenBlack
 --------------------------
 "
+echo $banner
 echo "Choose your hosts file:
 "
 
 PS3="Enter a number: "
-select option in Empty Basic Spark Full Custom Cancel
+select option in Help Empty Basic Spark Full Custom Cancel
 do
 echo "Selected option: $option"
-if [[ $REPLY =~ ^[1-6]$ ]]; then
+if [[ $REPLY =~ ^[2-7]$ ]]; then
    break
 else
-   echo "${NUM} is not a valid option..."
+  if [[ $REPLY == 1 ]]; then
+     echo "
+------------------------------------
+Help  - Show this message
+Empty - Clear Hosts / Disable Hosts
+
+Basic - StevenBlack's Unified hosts
+Spark - StevenBlack's Unified hosts
+        with all extensions except social
+Full  - StevenBlack's Unified hosts
+        with all extensions
+
+Custom - User hosts link
+Cancel - caecel this script
+------------------------------------
+"
+   else
+      echo "${NUM} is not a valid option..."
+   fi
 fi
 done
 
 case $option in
+Help)
+cancel=true
+;;
 Empty)
 empty=true
 ;;
