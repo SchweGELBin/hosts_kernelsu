@@ -74,8 +74,12 @@ if [[ -z $cancel  ]]; then
 
   if [[ -z $empty  ]]; then
     curl -fs $link >> $MODDIR/system/etc/hosts
-    echo "New hosts file created"
+  else
+    echo "127.0.0.1       localhost
+::1             ip6-localhost" >> $MODDIR/system/etc/hosts
   fi
+  
+  echo "New hosts file created"
 fi
 
 echo "Script ran successfully"
