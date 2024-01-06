@@ -29,7 +29,7 @@ Full  - StevenBlack's Unified hosts
         with all extensions
 
 Custom - User hosts link
-Cancel - cancel this script
+Cancel - Cancel this script
 ------------------------------------
 "
     else
@@ -54,11 +54,73 @@ link=https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/faken
 Full)
 link=https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-social/hosts
 ;;
+
 Custom)
+clear
+select coption in Help Single Addon Hosts Cancel
+do
+echo "Selected option: $coption"
+if [[ $REPLY =~ ^[2-5]$ ]]; then
+  break
+else
+  if [[ $REPLY == 1 ]]; then
+    echo "
+------------------------------------
+Help    - Show this message
+Single - Add a single host
+
+Addon - Append to hosts file
+Hosts - Replace hosts file
+
+Cancel - Cancel this script
+------------------------------------
+"
+    else
+      echo "${NUM} is not a valid option..."
+    fi
+fi
+done
+case $coption in
+Help)
+cancel=true;
+;;
+Hosts)
 echo "
 Paste your raw hosts link below:"
 read link
 ;;
+Addon)
+echo "
+Paste your raw addon link below:"
+read link
+echo "
+" >> $MODDIR/system/etc/hosts
+curl -fs $link >> $MODDIR/system/etc/hosts
+cancel=true
+;;
+Single)
+echo "" >> $MODDIR/system/etc/hosts
+echo "
+Enter your host below (Nothing - Quit):"
+while true
+do
+  read host
+  if [[ -z $host ]]; then
+    break
+  fi
+  echo "127.0.0.1       $host" >> $MODDIR/system/etc/hosts
+done
+cancel=true
+;;
+Cancel)
+cancel=true
+;;
+*)
+cancel=true
+;;
+esac
+;;
+
 Cancel)
 cancel=true
 ;;
