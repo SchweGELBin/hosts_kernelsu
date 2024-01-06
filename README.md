@@ -13,6 +13,7 @@ There are 2 options, how you can manage your hosts file:
 - Run the command "uphosts"
 - Choose your options to manage your hosts file:
 ```
+# General
 Help  - Show this message
 Empty - Clear Hosts / Disable Hosts
 
@@ -22,8 +23,19 @@ Spark - StevenBlack's Unified hosts
 Full  - StevenBlack's Unified hosts
         with all extensions
 
-Custom - User hosts link
+Custom - User hosts
 Cancel - cancel this script
+```
+- Customize your hosts file
+```
+# Custom
+Help   - Show this message
+Single - Add a single host
+
+Addon - Append to hosts file
+Hosts - Replace hosts file
+
+Cancel - Cancel this script
 ```
 ### App
 - Install an App like **[AdAway](https://github.com/AdAway/AdAway/releases/latest)**
