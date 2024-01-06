@@ -3,5 +3,5 @@ name=KSU-Hosts
 version=v4
 versionCode=4
 author=SchweGELBin
-description=Adds a hosts file to block ads etc.
+description=Adds a hosts file to block advertisements, trackers, etc.
 updateJson=https://raw.githubusercontent.com/SchweGELBin/hosts_kernelsu/master/update.json
