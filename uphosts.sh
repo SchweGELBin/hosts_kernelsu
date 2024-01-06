@@ -5,7 +5,7 @@ echo "--------------------------
    Hosts by StevenBlack
 --------------------------
 "
-echo "Your current hosts file has$(cat $MODDIR/system/etc/hosts | wc -l) entries
+echo "Your current hosts file has $(cat $MODDIR/system/etc/hosts | wc -l) entries
 Choose your hosts file:
 "
 
