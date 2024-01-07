@@ -1,3 +1,7 @@
+## v7
+- Cleanup code
+- Added the option to cleanup the hostsfile
+
 ## v6
 - Improved the "Custom" section in "uphosts"
 - New options: Single Blacklist, Addons
