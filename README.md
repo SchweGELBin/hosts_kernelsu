@@ -23,8 +23,9 @@ Spark - StevenBlack's Unified hosts
 Full  - StevenBlack's Unified hosts
         with all extensions
 
-Custom - User hosts
-Cancel - cancel this script
+Custom  - User hosts link
+Cleanup - Cleanup Hosts
+Cancel  - Cancel this script
 ```
 - Customize your hosts file
 ```
