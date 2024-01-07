@@ -1,4 +1,4 @@
-hostfile=$MODDIR/system/etc/hosts
+hostsfile=$MODDIR/system/etc/hosts
 
 clear
 
@@ -7,7 +7,7 @@ echo "--------------------------
    Hosts by StevenBlack
 --------------------------
 "
-echo "Your current hosts file has $(cat $hostfile | wc -l) entries
+echo "Your current hosts file has $(cat $hostsfile | wc -l) entries
 Choose your hosts file:
 "
 
@@ -30,8 +30,9 @@ Spark - StevenBlack's Unified hosts
 Full  - StevenBlack's Unified hosts
         with all extensions
 
-Custom - User hosts link
-Cancel - Cancel this script
+Custom  - User hosts link
+Cleanup - Cleanup Hosts
+Cancel  - Cancel this script
 ------------------------------------
 "
     else
@@ -95,14 +96,14 @@ Addon)
 echo "
 Paste your raw addon link below:"
 read link
-echo "" >> $hostfile
-curl -fs $link >> $hostfile
+echo "" >> $hostsfile
+curl -fs $link >> $hostsfile
 cancel=true
 ;;
 Single)
 echo "
 # Custom hosts below
-" >> $hostfile
+" >> $hostsfile
 echo "
 Enter your host below (Nothing - Quit):"
 while true
@@ -111,16 +112,16 @@ do
   if [[ -z $host ]]; then
     break
   fi
-  echo "0.0.0.0         $host" >> $hostfile
+  echo "0.0.0.0 $host" >> $hostsfile
 done
 cancel=true
 ;;
 Cleanup)
-sed -i 's/#.*$//' $hostfile # Remove comments
-sed -i 's/\s*$//' $hostfile # Remove blanks at end
-sed -i 's/^\s*//' $hostfile # Remove blanks at beginning
-sed -i '/^\s*$/d' $hostfile # Remove empty lines
-sort -u -o $hostfile{,}     # Remove duplicates
+sed -i 's/#.*$//' $hostsfile # Remove comments
+sed -i 's/\s*$//' $hostsfile # Remove blanks at end
+sed -i 's/^\s*//' $hostsfile # Remove blanks at beginning
+sed -i '/^\s*$/d' $hostsfile # Remove empty lines
+sort -u -o $hostsfile{,}     # Remove duplicates
 ;;
 Cancel)
 cancel=true
@@ -140,15 +141,15 @@ cancel=true
 esac
 
 if [[ -z $cancel  ]]; then
-  > $hostfile
+  > $hostsfile
   echo ""
   echo "Hosts file cleared"
 
   if [[ -z $empty  ]]; then
-    curl -fs $link >> $hostfile
+    curl -fs $link >> $hostsfile
   else
-    echo "127.0.0.1       localhost
-::1             ip6-localhost" >> $hostfile
+    echo "127.0.0.1 localhost
+::1 ip6-localhost" >> $hostsfile
   fi
   
   echo "New hosts file created"
