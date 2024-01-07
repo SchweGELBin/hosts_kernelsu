@@ -23,7 +23,7 @@ Spark - StevenBlack's Unified hosts
 Full  - StevenBlack's Unified hosts
         with all extensions
 
-Custom  - User hosts link
+Custom  - Customize hosts
 Cleanup - Cleanup Hosts
 Cancel  - Cancel this script
 ```
