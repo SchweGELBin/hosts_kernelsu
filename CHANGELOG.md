@@ -1,3 +1,7 @@
+## v8
+- Cleanup code
+- Bug Fix
+
 ## v7
 - Cleanup code
 - Added the option to cleanup the hostsfile
