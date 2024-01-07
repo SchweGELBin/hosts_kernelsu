@@ -1,3 +1,5 @@
+hostfile=$MODDIR/system/etc/hosts
+
 clear
 
 echo "--------------------------
@@ -5,15 +7,15 @@ echo "--------------------------
    Hosts by StevenBlack
 --------------------------
 "
-echo "Your current hosts file has $(cat $MODDIR/system/etc/hosts | wc -l) entries
+echo "Your current hosts file has $(cat $hostfile | wc -l) entries
 Choose your hosts file:
 "
 
 PS3="Enter a number: "
-select option in Help Empty Basic Spark Full Custom Cancel
+select option in Help Empty Basic Spark Full Custom Cleanup Cancel
 do
 echo "Selected option: $option"
-if [[ $REPLY =~ ^[2-7]$ ]]; then
+if [[ $REPLY =~ ^[2-8]$ ]]; then
   break
 else
   if [[ $REPLY == 1 ]]; then
@@ -93,14 +95,14 @@ Addon)
 echo "
 Paste your raw addon link below:"
 read link
-echo "" >> $MODDIR/system/etc/hosts
-curl -fs $link >> $MODDIR/system/etc/hosts
+echo "" >> $hostfile
+curl -fs $link >> $hostfile
 cancel=true
 ;;
 Single)
 echo "
 # Custom hosts below
-" >> $MODDIR/system/etc/hosts
+" >> $hostfile
 echo "
 Enter your host below (Nothing - Quit):"
 while true
@@ -109,9 +111,16 @@ do
   if [[ -z $host ]]; then
     break
   fi
-  echo "0.0.0.0         $host" >> $MODDIR/system/etc/hosts
+  echo "0.0.0.0         $host" >> $hostfile
 done
 cancel=true
+;;
+Cleanup)
+sed -i 's/#.*$//' $hostfile # Remove comments
+sed -i 's/\s*$//' $hostfile # Remove blanks at end
+sed -i 's/^\s*//' $hostfile # Remove blanks at beginning
+sed -i '/^\s*$/d' $hostfile # Remove empty lines
+sort -u -o $hostfile{,}     # Remove duplicates
 ;;
 Cancel)
 cancel=true
@@ -131,15 +140,15 @@ cancel=true
 esac
 
 if [[ -z $cancel  ]]; then
-  > $MODDIR/system/etc/hosts
+  > $hostfile
   echo ""
   echo "Hosts file cleared"
 
   if [[ -z $empty  ]]; then
-    curl -fs $link >> $MODDIR/system/etc/hosts
+    curl -fs $link >> $hostfile
   else
     echo "127.0.0.1       localhost
-::1             ip6-localhost" >> $MODDIR/system/etc/hosts
+::1             ip6-localhost" >> $hostfile
   fi
   
   echo "New hosts file created"
