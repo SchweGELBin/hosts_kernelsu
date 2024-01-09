@@ -98,8 +98,8 @@ Paste your raw addon link below:"
     if [[ -z $link ]]; then
       echo "" >> $hostsfile
       curl -fs $link >> $hostsfile
-      cancel=true
     fi
+    cancel=true
   ;;
   Single)
     echo "
