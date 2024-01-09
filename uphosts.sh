@@ -95,9 +95,11 @@ Paste your raw hosts link below:"
     echo "
 Paste your raw addon link below:"
     read link
-    echo "" >> $hostsfile
-    curl -fs $link >> $hostsfile
-    cancel=true
+    if [[ -z $link ]]; then
+      echo "" >> $hostsfile
+      curl -fs $link >> $hostsfile
+      cancel=true
+    fi
   ;;
   Single)
     echo "
@@ -139,6 +141,10 @@ Cancel)
   cancel=true
 ;;
 esac
+
+if [[ -z $link ] && [ -z $empty]]; then
+  cancel = true
+if
 
 if [[ -z $cancel  ]]; then
   > $hostsfile
