@@ -42,9 +42,6 @@ Cancel  - Cancel this script
 done
 
 case $option in
-Help)
-  cancel=true
-;;
 Empty)
   empty=true
 ;;
@@ -83,9 +80,6 @@ Cancel - Cancel this script
     fi
   done
   case $coption in
-  Help)
-    cancel=true;
-  ;;
   Hosts)
     echo "
 Paste your raw hosts link below:"
@@ -99,7 +93,6 @@ Paste your raw addon link below:"
       echo "" >> $hostsfile
       curl -fs $link >> $hostsfile
     fi
-    cancel=true
   ;;
   Single)
     echo "
@@ -115,13 +108,9 @@ Enter your host below (Nothing - Quit):"
       fi
       echo "0.0.0.0 $host" >> $hostsfile
     done
-    cancel=true
-  ;;
-  Cancel)
-    cancel=true
   ;;
   *)
-    cancel=true
+    echo "Cancelling..."
   ;;
   esac
 ;;
@@ -132,18 +121,16 @@ Cleanup)
   sed -i 's/^\s*//' $hostsfile # Remove blanks at beginning
   sed -i '/^\s*$/d' $hostsfile # Remove empty lines
   sort -u -o $hostsfile{,}     # Remove duplicates
-  cancel=true
-;;
-Cancel)
-  cancel=true
 ;;
 *)
-  cancel=true
+  echo "Cancelling..."
 ;;
 esac
 
 if [[ -z $link ] && [ -z $empty]]; then
   cancel = true
+else
+  cancel = false
 if
 
 if [[ -z $cancel  ]]; then
