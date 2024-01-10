@@ -155,3 +155,7 @@ echo "
 |  https://github.com/StevenBlack/hosts            |
 ####################################################
 "
+
+# Debug
+#echo "Current hosts file:"
+#cat $hostsfile
