@@ -43,7 +43,7 @@ done
 
 case $option in
 Empty)
-  empty=true
+  link=empty
 ;;
 Basic)
   link=https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
@@ -88,10 +88,10 @@ Paste your raw hosts link below:"
   Addon)
     echo "
 Paste your raw addon link below:"
-    read link
-    if [[ -z $link ]]; then
+    read alink
+    if [[ -n $alink ]]; then
       echo "" >> $hostsfile
-      curl -fs $link >> $hostsfile
+      curl -fs $alink >> $hostsfile
     fi
   ;;
   Single)
@@ -127,22 +127,16 @@ Cleanup)
 ;;
 esac
 
-if [[ -z $link ] && [ -z $empty]]; then
-  cancel = true
-else
-  cancel = false
-if
-
-if [[ -z $cancel  ]]; then
+if [[ -n $link ]]; then
   > $hostsfile
   echo ""
   echo "Hosts file cleared"
 
-  if [[ -z $empty  ]]; then
-    curl -fs $link >> $hostsfile
-  else
+  if [[ $link == "empty" ]]; then
     echo "127.0.0.1 localhost
 ::1 ip6-localhost" >> $hostsfile
+  else
+    curl -fs $link >> $hostsfile
   fi
   
   echo "New hosts file created"
