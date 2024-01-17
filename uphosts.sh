@@ -1,16 +1,30 @@
 hostsfile=$MODDIR/system/etc/hosts
 
 banner() {
-echo "--------------------------
-| UPHOSTS by SchweGELBin |
-|  Hosts by StevenBlack  |
---------------------------
+echo "####################################################
+|              UPHOSTS by SchweGELBin              |
+|--------------------------------------------------|
+|               Hosts by StevenBlack               |
+####################################################
 "
 info
 }
 
 info(){
 echo "Your current hosts file has $(cat $hostsfile | wc -l) entries
+"
+}
+
+thanks() {
+echo "
+####################################################
+|         Thank you for using this module!         |
+|          Please check out SchweGELBin's          |
+|             and StevenBlack's Github             |
+|--------------------------------------------------|
+|  https://github.com/SchweGELBin/hosts_kernelsu   |
+|  https://github.com/StevenBlack/hosts            |
+####################################################
 "
 }
 
@@ -64,11 +78,10 @@ do
         help
         helpshown="true"
       fi
-      echo ""
     else
-      echo "${NUM} is not a valid option...
-"
+      echo "${NUM} is not a valid option..."
     fi
+    echo ""
   fi
 done
 helpshown="false"
@@ -100,10 +113,10 @@ Custom)
           chelp
           helpshown="true"
         fi
-        echo ""
-        else
-          echo "${NUM} is not a valid option..."
-        fi
+      else
+        echo "${NUM} is not a valid option..."
+      fi
+      echo ""
     fi
   done
   helpshown="false"
@@ -173,16 +186,7 @@ fi
 echo "Script ran successfully"
 clear
 banner
-echo "
-####################################################
-|         Thank you for using this module!         |
-|          Please check out SchweGELBin's          |
-|             and StevenBlack's Github             |
-|--------------------------------------------------|
-|  https://github.com/SchweGELBin/hosts_kernelsu   |
-|  https://github.com/StevenBlack/hosts            |
-####################################################
-"
+thanks
 
 # Debug
 #echo "Current hosts file:"
