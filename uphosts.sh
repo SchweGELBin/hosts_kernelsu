@@ -2,11 +2,15 @@ hostsfile=$MODDIR/system/etc/hosts
 
 clear
 
+banner() {
 echo "--------------------------
   UPHOSTS by SchweGELBin
    Hosts by StevenBlack
 --------------------------
 "
+}
+
+banner
 echo "Your current hosts file has $(cat $hostsfile | wc -l) entries
 Choose your hosts file:
 "
