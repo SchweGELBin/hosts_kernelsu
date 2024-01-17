@@ -2,28 +2,20 @@ hostsfile=$MODDIR/system/etc/hosts
 
 banner() {
 echo "--------------------------
-  UPHOSTS by SchweGELBin
-   Hosts by StevenBlack
+| UPHOSTS by SchweGELBin |
+|  Hosts by StevenBlack  |
 --------------------------
+"
+info
+}
+
+info(){
+echo "Your current hosts file has $(cat $hostsfile | wc -l) entries
 "
 }
 
-clear
-banner
-
-echo "Your current hosts file has $(cat $hostsfile | wc -l) entries
-Choose your hosts file:
-"
-
-PS3="Enter a number: "
-select option in Help Empty Basic Spark Full Custom Cleanup Cancel
-do
-  echo "Selected option: $option"
-  if [[ $REPLY =~ ^[2-8]$ ]]; then
-    break
-  else
-    if [[ $REPLY == 1 ]]; then
-      echo "
+help() {
+echo "
 ------------------------------------
 Help  - Show this message
 Empty - Clear Hosts / Disable Hosts
@@ -37,13 +29,49 @@ Full  - StevenBlack's Unified hosts
 Custom  - Customize hosts
 Cleanup - Cleanup Hosts
 Cancel  - Cancel this script
+------------------------------------"
+}
+
+chelp(){
+echo "
+------------------------------------
+Help   - Show this message
+Single - Add a single host
+
+Addon - Append to hosts file
+Hosts - Replace hosts file
+
+Cancel - Cancel this script
 ------------------------------------
 "
+}
+
+clear
+banner
+echo "Choose your hosts file:
+"
+
+helpshown="false"
+PS3="Enter a number: "
+select option in Help Empty Basic Spark Full Custom Cleanup Cancel
+do
+  echo "Selected option: $option"
+  if [[ $REPLY =~ ^[2-8]$ ]]; then
+    break
+  else
+    if [[ $REPLY == 1 ]]; then
+      if [[ $helpshown == "false" ]]; then
+        help
+        helpshown="true"
+      fi
+      echo ""
     else
-      echo "${NUM} is not a valid option..."
+      echo "${NUM} is not a valid option...
+"
     fi
   fi
 done
+helpshown="false"
 
 case $option in
 Empty)
@@ -60,6 +88,7 @@ Full)
 ;;
 Custom)
   clear
+  banner
   select coption in Help Single Addon Hosts Cancel
   do
     echo "Selected option: $coption"
@@ -67,22 +96,17 @@ Custom)
       break
     else
       if [[ $REPLY == 1 ]]; then
-        echo "
-------------------------------------
-Help   - Show this message
-Single - Add a single host
-
-Addon - Append to hosts file
-Hosts - Replace hosts file
-
-Cancel - Cancel this script
-------------------------------------
-"
+        if [[ $helpshown == "false" ]]; then
+          chelp
+          helpshown="true"
+        fi
+        echo ""
         else
           echo "${NUM} is not a valid option..."
         fi
     fi
   done
+  helpshown="false"
   case $coption in
   Hosts)
     echo "
@@ -148,7 +172,7 @@ fi
 
 echo "Script ran successfully"
 clear
-
+banner
 echo "
 ####################################################
 |         Thank you for using this module!         |
