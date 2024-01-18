@@ -60,6 +60,9 @@ Cancel - Cancel this script
 "
 }
 
+
+while [[ -z $stop ]]
+do
 clear
 banner
 echo "Choose your hosts file:
@@ -164,6 +167,7 @@ Cleanup)
   sort -u -o $hostsfile{,}     # Remove duplicates
 ;;
 *)
+  stop=true
   echo "Cancelling..."
 ;;
 esac
@@ -182,6 +186,7 @@ if [[ -n $link ]]; then
   
   echo "New hosts file created"
 fi
+done
 
 echo "Script ran successfully"
 clear
