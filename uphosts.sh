@@ -11,8 +11,7 @@ info
 }
 
 info(){
-echo "Your current hosts file has $(cat $hostsfile | wc -l) entries
-"
+echo "Your current hosts file has $(cat $hostsfile | wc -l) entries"
 }
 
 thanks() {
@@ -65,7 +64,8 @@ while [[ -z $stop ]]
 do
 clear
 banner
-echo "Choose your hosts file:
+echo "
+Choose your hosts file:
 "
 
 helpshown="false"
