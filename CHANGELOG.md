@@ -1,3 +1,7 @@
+## v11
+- Looped uphosts script
+  -> Option to perform multiple actions
+
 ## v10
 - Minor changes and improvements
 - Yet another cleanup
