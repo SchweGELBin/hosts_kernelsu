@@ -14,14 +14,14 @@ There are 2 options, how you can manage your hosts file:
 - Choose your options to manage your hosts file:
 ```
 # General
-Help  - Show this message
-Empty - Clear Hosts / Disable Hosts
+Help    - Show this message
+Empty   - Clear Hosts / Disable Hosts
 
-Basic - StevenBlack's Unified hosts
-Spark - StevenBlack's Unified hosts
-        with all extensions except social
-Full  - StevenBlack's Unified hosts
-        with all extensions
+Basic   - StevenBlack's Unified hosts
+Spark   - StevenBlack's Unified hosts
+          with all extensions except social
+Full    - StevenBlack's Unified hosts
+          with all extensions
 
 Custom  - Customize hosts
 Cleanup - Cleanup Hosts
@@ -33,8 +33,8 @@ Cancel  - Cancel this script
 Help   - Show this message
 Single - Add a single host
 
-Addon - Append to hosts file
-Hosts - Replace hosts file
+Addon  - Append to hosts file
+Hosts  - Replace hosts file
 
 Cancel - Cancel this script
 ```
