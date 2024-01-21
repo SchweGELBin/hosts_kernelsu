@@ -53,6 +53,7 @@ Single - Add a single host
 
 Addon  - Append to hosts file
 Hosts  - Replace hosts file
+File   - Copies another file's content
 
 Cancel - Cancel this script
 ------------------------------------
@@ -105,7 +106,7 @@ Full)
 Custom)
   clear
   banner
-  select coption in Help Single Addon Hosts Cancel
+  select coption in Help Single Addon Hosts File Cancel
   do
     echo "Selected option: $coption"
     if [[ $REPLY =~ ^[2-5]$ ]]; then
@@ -134,8 +135,17 @@ Paste your raw hosts link below:"
 Paste your raw addon link below:"
     read alink
     if [[ -n $alink ]]; then
-      echo "" >> $hostsfile
+      > $hostsfile
       curl -fs $alink >> $hostsfile
+    fi
+  ;;
+  File)
+    echo "
+Paste your raw addon link below:"
+    read path
+    if [[ test -e "$path" ]]; then
+      > $hostsfile
+      cat $path >> $hostsfile
     fi
   ;;
   Single)
