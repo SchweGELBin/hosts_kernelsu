@@ -1,4 +1,5 @@
-hostsfile=$MODDIR/system/etc/hosts
+hostsdir=$MODDIR/system/etc
+hostsfile=$hostsdir/hosts
 
 banner() {
 echo "####################################################
@@ -39,6 +40,9 @@ Spark   - StevenBlack's Unified hosts
 Full    - StevenBlack's Unified hosts
           with all extensions
 
+Backup  - Backup current hosts
+Restore - Restore current hosts
+
 Custom  - Customize hosts
 Cleanup - Cleanup Hosts
 Cancel  - Cancel this script
@@ -71,7 +75,7 @@ Choose your hosts file:
 
 helpshown="false"
 PS3="Enter a number: "
-select option in Help Empty Basic Spark Full Custom Cleanup Cancel
+select option in Help Empty Basic Spark Full Backup Restore Custom Cleanup Cancel
 do
   echo "Selected option: $option"
   if [[ $REPLY =~ ^[2-8]$ ]]; then
@@ -102,6 +106,15 @@ Spark)
 ;;
 Full)
   link=https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-social/hosts
+;;
+Backup)
+  cp $hostsfile $hostsdir/hosts-bak
+;;
+Restore)
+  if [[ test -e "$hostsdir/hosts-bak" ]]; then
+    > $hostsfile
+    cat $hostsdir/hosts-bak >> $hostsfile
+  fi
 ;;
 Custom)
   clear
@@ -141,7 +154,7 @@ Paste your raw addon link below:"
   ;;
   File)
     echo "
-Paste your raw addon link below:"
+Paste your file path below:"
     read path
     if [[ test -e "$path" ]]; then
       > $hostsfile
