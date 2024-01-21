@@ -73,12 +73,13 @@ echo "
 Choose your hosts file:
 "
 
+link=
 helpshown="false"
 PS3="Enter a number: "
 select option in Help Empty Basic Spark Full Backup Restore Custom Cleanup Cancel
 do
   echo "Selected option: $option"
-  if [[ $REPLY =~ ^[2-8]$ ]]; then
+  if [ "$REPLY" -ge 2 ] && [ "$REPLY" -le 10 ]; then
     break
   else
     if [[ $REPLY == 1 ]]; then
@@ -111,7 +112,7 @@ Backup)
   cp $hostsfile $hostsfile-bak
 ;;
 Restore)
-  if [[ test -e "$hostsfile-bak" ]]; then
+  if test -e "$hostsfile-bak"; then
     > $hostsfile
     cat $hostsfile-bak >> $hostsfile
   fi
@@ -122,7 +123,7 @@ Custom)
   select coption in Help Single Addon Hosts File Cancel
   do
     echo "Selected option: $coption"
-    if [[ $REPLY =~ ^[2-5]$ ]]; then
+    if [[ $REPLY =~ ^[2-6]$ ]]; then
       break
     else
       if [[ $REPLY == 1 ]]; then
@@ -156,7 +157,7 @@ Paste your raw addon link below:"
     echo "
 Paste your file path below:"
     read path
-    if [[ test -e "$path" ]]; then
+    if test -e "$path"; then
       > $hostsfile
       cat $path >> $hostsfile
     fi
