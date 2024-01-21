@@ -108,12 +108,12 @@ Full)
   link=https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-social/hosts
 ;;
 Backup)
-  cp $hostsfile $hostsdir/hosts-bak
+  cp $hostsfile $hostsfile-bak
 ;;
 Restore)
-  if [[ test -e "$hostsdir/hosts-bak" ]]; then
+  if [[ test -e "$hostsfile-bak" ]]; then
     > $hostsfile
-    cat $hostsdir/hosts-bak >> $hostsfile
+    cat $hostsfile-bak >> $hostsfile
   fi
 ;;
 Custom)
