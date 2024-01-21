@@ -23,6 +23,9 @@ Spark   - StevenBlack's Unified hosts
 Full    - StevenBlack's Unified hosts
           with all extensions
 
+Backup  - Backup current hosts
+Restore - Restore current hosts
+
 Custom  - Customize hosts
 Cleanup - Cleanup Hosts
 Cancel  - Cancel this script
@@ -35,6 +38,7 @@ Single - Add a single host
 
 Addon  - Append to hosts file
 Hosts  - Replace hosts file
+File   - Copies another file's content
 
 Cancel - Cancel this script
 ```
