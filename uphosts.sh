@@ -138,30 +138,8 @@ Custom)
     fi
   done
   helpshown="false"
+  
   case $coption in
-  Hosts)
-    echo "
-Paste your raw hosts link below:"
-    read link
-  ;;
-  Addon)
-    echo "
-Paste your raw addon link below:"
-    read alink
-    if [[ -n $alink ]]; then
-      > $hostsfile
-      curl -fs $alink >> $hostsfile
-    fi
-  ;;
-  File)
-    echo "
-Paste your file path below:"
-    read path
-    if test -e "$path"; then
-      > $hostsfile
-      cat $path >> $hostsfile
-    fi
-  ;;
   Single)
     echo "
 # Custom hosts below
@@ -176,6 +154,29 @@ Enter your host below (Nothing - Quit):"
       fi
       echo "0.0.0.0 $host" >> $hostsfile
     done
+  ;;
+  Addon)
+    echo "
+Paste your raw addon link below:"
+    read alink
+    if [[ -n $alink ]]; then
+      > $hostsfile
+      curl -fs $alink >> $hostsfile
+    fi
+  ;;
+  Hosts)
+    echo "
+Paste your raw hosts link below:"
+    read link
+  ;;
+  File)
+    echo "
+Paste your file path below:"
+    read path
+    if test -e "$path"; then
+      > $hostsfile
+      cat $path >> $hostsfile
+    fi
   ;;
   *)
     echo "Cancelling..."
