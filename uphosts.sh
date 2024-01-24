@@ -79,7 +79,7 @@ PS3="Enter a number: "
 select option in Help Empty Basic Spark Full Backup Restore Custom Cleanup Cancel
 do
   echo "Selected option: $option"
-  if [ "$REPLY" -ge 2 ] && [ "$REPLY" -le 10 ]; then
+  if [ $REPLY -ge 2 ] && [ $REPLY -le 10 ]; then
     break
   else
     if [[ $REPLY == 1 ]]; then
@@ -88,6 +88,7 @@ do
         helpshown="true"
       fi
     else
+      if [[ $REPLY == "q" ]] || [[ $REPLY == "exit" ]]; then break; fi
       echo "${NUM} is not a valid option..."
     fi
     echo ""
