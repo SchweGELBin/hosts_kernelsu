@@ -1,3 +1,7 @@
+## v13
+- Minor changes
+- Now you can use "q" or "exit" to quit
+
 ## v12
 - Added the option to copy a custom downloaded hosts file (uphosts-Custom-File)
 - Added the option to backup and restore the hostsfile (uphosts-Backup / uphosts-Restore)
