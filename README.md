@@ -1,5 +1,7 @@
 # KernelSU - Hosts
 
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/SchweGELBin/hosts_kernelsu/total)
+
 **Adds a hosts file to block advertisements, trackers, etc.**
 
 ## Install
